@@ -1,0 +1,70 @@
+<!doctype html>
+
+<head>
+  <title>Your title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+  .pred-container {
+    margin-bottom: 20px;
+  }
+
+  .pred-container > div {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+  }
+
+  .row {
+    display: table-row;
+  }
+  .cell {
+    display: table-cell;
+    padding-right: 20px;
+  }
+
+  #file-container {
+    margin-bottom: 20px;
+  }
+</style>
+
+<body>
+  <div class="tfjs-example-container">
+    <section class='title-area'>
+      <h1>TensorFlow.js: Using a Keras model in the browser</h1>
+    </section>
+
+    <section>
+      <p class='section-head'>Description:</p>
+      <p>
+        This model classifies four types of buildings or objects. They are pavilion, theater, museum and stone. 
+        Each class contains about 100 pictures taken fron different angle around the object.
+        The data could be downloaded at <a>https://drive.google.com/file/d/1rj-RaymLVMJoZOrkxa2wt0h2-EoPrDVL/view?usp=sharing</a>
+        The model is trained by  randomly separating half of the data as training set and other as validation set.
+        To increase the performance of the classification, we apply data augmentation on the training data and keep the test data as its original form.
+      </p>
+    </section>
+
+    <section>
+      <p class='section-head'>Status:</p>
+      <div id="status"></div>
+    </section>
+
+    <section>
+      <p class='section-head'>Model Output</p>
+
+      <div id="file-container" style="display: none">
+        Upload an image: <input type="file" id="files" name="files[]" multiple />
+      </div>
+
+      <div id="predictions"></div>
+
+      <img style="display: none" id="cat" src="cat.jpg" width=192 height=192 />
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <script src="index.js"></script>
+  </div>
+</body> 
